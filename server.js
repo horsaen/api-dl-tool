@@ -1,7 +1,9 @@
 const fs = require('fs')
 const axios = require('axios')
 
-const url = "https://api.horsaen.com/members"
+require('dotenv').config()
+const url = process.env.url
+const path = process.env.path
 
 function fetchData(){
     axios
