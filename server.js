@@ -1,19 +1,27 @@
 const fs = require('fs')
 const axios = require('axios')
 
-require('dotenv').config()
-const url = process.env.url
-const path = process.env.path
+// literally no point in adding a .env file, just use an array here ;-;
+const links = [
+    { name: 'xxxx', url: 'https://api.github.com/'},
+    { name: 'xxxx2', url: 'https://api.github.com/'}
+]
 
-function fetchData(){
+links.map(getData)
+
+function getData(item){
     axios
-    .get(url)
+    .get(item.url)
     .then((res) => {
-        fs.writeFile('./import/members.json', JSON.stringify(res.data), err => {
-            if (err){
+        fs.writeFileSync('./data/' + item.name + '.json', JSON.stringify(res.data), err => {
+            if(err) {
                 console.log(err)
-            } else {console.log("succ")}
+            } else {
+                console.log('success')
+            }
         })
     })
+    .catch((err) => {
+        console.log(err)
+    })
 }
-fetchData()
