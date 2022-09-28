@@ -1,6 +1,30 @@
 {
+  "name": "api-dl-tool",
+  "version": "1.0.0",
+  "description": "Simple tool that takes data from any given api and downloads it to the local fs, mainly for personal purposes as it's easy to install and configure",
+  "main": "server.js",
   "dependencies": {
+    "asynckit": "^0.4.0",
     "axios": "^0.27.2",
-    "dotenv": "^16.0.2"
-  }
+    "combined-stream": "^1.0.8",
+    "delayed-stream": "^1.0.0",
+    "follow-redirects": "^1.15.2",
+    "form-data": "^4.0.0",
+    "mime-db": "^1.52.0",
+    "mime-types": "^2.1.35"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horsaen/api-dl-tool.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/horsaen/api-dl-tool/issues"
+  },
+  "homepage": "https://github.com/horsaen/api-dl-tool#readme"
 }
